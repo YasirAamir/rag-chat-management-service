@@ -45,18 +45,18 @@ DB_PASSWORD = Database password
 
 2. Start MySQL on Docker network
 ```
-docker run -d --name rag-mysql --network rag-network -e MYSQL_ROOT_PASSWORD=root123 -e MYSQL_DATABASE=rag-chat-management-service -p 3306:3306 mysql:8
+docker run -d --name <container-name> --network <network-name> -e MYSQL_ROOT_PASSWORD=<password> -e MYSQL_DATABASE=<database-name> -p 3306:3306 mysql:8
 ```
 
 3. Build docker image
 ```
-docker build -t rag-chat-management-service .
+docker build -t <image-name> .
 ```
 
 4. Run Application
 
 ```
-docker run -p 8080:8080 --network rag-network --env-file .env rag-chat-management-service
+docker run -p 8080:8080 --network <network-name> --env-file .env <image-name>  
 ```
 
 ## Swagger
